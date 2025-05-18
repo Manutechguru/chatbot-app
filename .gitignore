@@ -1,0 +1,13 @@
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# virtual env
+venv/
+.env
+instance/  # your local SQLite DB & secrets
+
+# OS / editor junk
+.DS_Store
+*.swp

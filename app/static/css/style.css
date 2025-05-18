@@ -1,0 +1,179 @@
+/* ---------- Global Styles ---------- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.3s, color 0.3s;
+    background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa);
+    padding: 20px;
+}
+
+/* Accent colors */
+:root {
+    --accent: #6a5acd;
+    --accent-dark: #5b4bb7;
+    --card-bg: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+}
+.navbar a { color: #fff; margin-right: 15px; text-decoration: none; }
+.navbar a:hover { text-decoration: underline; }
+
+/* ---------- Chat layout ---------- */
+.chat-container { display: flex; gap: 15px; }
+
+.sidebar {
+    width: 220px;
+    border-right: 2px solid var(--accent);
+    padding-right: 10px;
+}
+.sidebar h3 { margin: 0 0 10px; }
+.sidebar ul { list-style: none; padding-left: 0; }
+.sidebar li { cursor: pointer; padding: 5px 0; }
+.sidebar li:hover { text-decoration: underline; }
+.sidebar button { width: 100%; margin-top: 10px; }
+
+.main-chat { flex: 1; }
+
+/* ---------- Controls ---------- */
+.chat-controls { text-align: right; margin-bottom: 10px; }
+#clear-chat {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#clear-chat:hover { background-color: #b02a37; }
+
+/* ---------- Prompt Suggestions ---------- */
+.prompt-suggestions {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+}
+
+.prompt-suggestions h4 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: var(--accent);
+}
+
+.suggestions-list { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.prompt-btn {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+}
+.prompt-btn:hover { background-color: var(--accent-dark); }
+
+/* ---------- Upload Form ---------- */
+.upload-form {
+    margin-bottom: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.upload-form input[type="file"] {
+    flex: 1;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    padding: 6px;
+}
+.upload-form button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+.upload-form button:hover { background-color: var(--accent-dark); }
+
+/* ---------- Chat Box & Messages ---------- */
+#chat-box {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 15px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.user-message,
+.bot-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    max-width: 75%;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in;
+}
+.user-message {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    font-weight: bold;
+}
+.bot-message {
+    background-color: #e6e6fa;
+    color: #4b0082;
+    font-style: italic;
+}
+
+/* ---------- Chat Form ---------- */
+.chat-form { display: flex; align-items: center; gap: 10px; }
+.chat-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+}
+.chat-form button,
+button {
+    background-color: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover { background-color: var(--accent-dark); }
+
+/* ---------- Typing dots ---------- */
+.typing-dots span {
+    animation: blink 1.4s infinite;
+    font-size: 24px;
+    margin-right: 2px;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+/* ---------- Keyframes ---------- */
+@keyframes blink {
+    0%, 80%, 100% { opacity: 0; }
+    40%           { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
