@@ -15,4 +15,5 @@ openai
 python-dotenv
 PyPDF2
 pandas
+gunicorn
 
