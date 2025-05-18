@@ -16,4 +16,5 @@ python-dotenv
 PyPDF2
 pandas
 gunicorn
+google-generativeai
 
